@@ -1,0 +1,24 @@
+body{
+    font-family: Arial;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+
+.navbar-list{
+    display:flex;
+    overflow: hidden;
+   background-color: nav;
+
+}
+.nav-item{
+    list-style-type: none;
+    float: left;
+}
+.nav-item a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+}

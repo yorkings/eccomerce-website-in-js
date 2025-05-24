@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Ecommerce Navbar</title>
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">MyShop</div>
+      <button class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="navbar-list" id="navbar-list">
+        <li class="nav-item"><a href="#"><i class="fas fa-home"></i></a></li>
+        <li class="nav-item"><a href="#"><i class="fas fa-info-circle"></i></a></li>
+        <li class="nav-item"><a href="#"><i class="fas fa-phone-alt"></i></a></li>
+        <li class="nav-item"><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <script>
+    document.getElementById("menu-toggle").addEventListener("click", ()=> {
+      document.getElementById("navbar-list").classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

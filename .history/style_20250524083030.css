@@ -1,0 +1,22 @@
+body{
+    font-family: Arial;
+    box-sizing: border-box;
+}
+.navigation{
+   background-color: rgb(17, 3, 54); 
+   color: white;
+   position: relative;
+}
+
+.navbar-list{
+    display:flex;
+
+}
+.nav-item{
+    list-style-type: none;
+    height:4rem;
+    padding:2rem;
+}
+.nav-item a{
+    font-size: 14px;
+}

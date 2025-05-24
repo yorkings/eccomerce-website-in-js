@@ -1,0 +1,13 @@
+*{
+   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif
+}
+.navbar{
+    background-color: rgba(255,255.);
+}
+
+@media  (max-width:768px)  {
+    
+}
