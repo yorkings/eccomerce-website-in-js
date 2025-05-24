@@ -1,0 +1,124 @@
+*{
+   box-sizing: border-box;
+   margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif
+  
+}
+.navbar{
+    background-color: rgba(49, 4, 70, 0.884);
+    display: flex;
+    position: relative;
+    padding: 1em 1rem;
+    flex-wrap: wrap; 
+    align-items: center;
+    width: 100vw;
+}
+.logo{
+    font-size: 1.5em;
+    font: bold;
+    color: #ffffff;
+}
+.menu-toggle{
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+.navbar-list{
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-left: auto;
+}
+
+.nav-item a{
+  display: block;
+  color: white;
+  font-size: 1.8rem;
+  text-decoration: none;
+  padding: 1.5rem;
+  transition: background 0.3s ease;
+}
+
+.nav-item a:hover:not(.active) {
+   background-color: #646363;
+   border-radius: 0.5rem;
+}
+.active{
+    background-color: #3f9c3c;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(15.625rem,1fr));
+    gap: 2em;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+.shop-container{
+  display: flex;
+   flex-direction: column;
+   background-color: #f7f4f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+.shop-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+.image{
+    max-width:100%;
+    max-height: 100%;
+    object-fit:cover;
+    margin: 0.45em;
+}
+
+.content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.item-name{
+    font-size: 1.3rem;
+    font: bolder;
+    color: #222;
+}
+.rating{
+    display:flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.sub-rate{
+    display:flex;
+    align-items: center;
+}
+.count{
+    color: #127bd1;
+}
+@media  (max-width:768px)  {
+    .menu-toggle{
+        display: flex;
+        margin-left: auto;
+    }
+    .navbar-list{
+       display: none;
+    }
+    .navbar.active{
+        display: block;
+        height: 100vh;
+    }
+    .navbar-list.active{
+        display:block
+    }
+ 
+    
+}
