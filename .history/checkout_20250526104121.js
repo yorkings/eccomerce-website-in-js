@@ -1,0 +1,47 @@
+import { cart } from './cart.js';
+import { products } from './product.js';
+
+const cartContainer = document.getElementById('cart-container');
+const summaryContainer = document.getElementById('summary-container');
+
+let cartHTML = '';
+
+cart.forEach((item) => {
+  const product = products.find((p) => p.id === item.productId);
+  if (product) {
+    cartHTML += `
+      <section class="cart-item">
+        <div class="cart-item-details">
+          <img src="${product.image}" alt="${product.name}" class="cart-image" />
+          <p class="cart-item-title">${product.name}</p>
+          <p class="cart-item-price">$${(product.priceCents / 100).toFixed(2)}</p>
+          <p class="cart-item-quantity">Quantity: ${item.quantity}</p>
+
+        </div>
+        
+      </section>
+    `;
+  }
+});
+
+cartContainer.innerHTML = cartHTML;
+
+// Order Summary Calculation
+const subtotalCents = cart.reduce((total, item) => {
+  const product = products.find(p => p.id === item.productId);
+  return total + (product ? product.priceCents * item.quantity : 0);
+}, 0);
+
+const shippingCents = 499;
+const taxCents = Math.round((subtotalCents + shippingCents) * 0.10);
+const totalCents = subtotalCents + shippingCents + taxCents;
+
+summaryContainer.innerHTML = `
+  <h3>Order Summary</h3>
+  <div class="summary-line"><span>Items (${cart.length}):</span> <span>$${(subtotalCents / 100).toFixed(2)}</span></div>
+  <div class="summary-line"><span>Shipping & handling:</span> <span>$${(shippingCents / 100).toFixed(2)}</span></div>
+  <div class="summary-line"><span>Total before tax:</span> <span>$${((subtotalCents + shippingCents) / 100).toFixed(2)}</span></div>
+  <div class="summary-line"><span>Estimated tax (10%):</span> <span>$${(taxCents / 100).toFixed(2)}</span></div>
+  <div class="summary-line order-total"><span>Order total:</span> <span>$${(totalCents / 100).toFixed(2)}</span></div>
+  <button class="place-order-btn">Place your order</button>
+`;

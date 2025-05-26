@@ -1,0 +1,25 @@
+export const cart=[];
+
+function addToCart(productId){
+       let matching;
+     cart.forEach((item)=>{
+       if(productId ===item.productId){
+        matching=item
+       }
+     })
+     if(matching){
+       matching.quantity +=1;
+     }else{
+        cart.push({
+       productId:productId,
+       quantity:1
+      });
+     }
+ 
+    let cartquantity=0
+    cart.forEach((item)=>{
+        cartquantity+=item.quantity
+    })
+    cartCount.innerHTML=cartquantity
+    counting()
+}
