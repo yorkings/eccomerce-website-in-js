@@ -30,10 +30,3 @@ export function removeFromCart(productId){
    localStorage.setItem("cart",JSON.stringify(cart))
 }
 
-export function updateCartQuantity(productId, newQuantity) {
-  const item = cart.find(p => p.productId === productId);
-  if (item) {
-    item.quantity = newQuantity;
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }
-}

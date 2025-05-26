@@ -1,4 +1,4 @@
-import { cart,removeFromCart,updateCartQuantity} from './cart.js';
+import { cart,removeFromCart} from './cart.js';
 import { products } from './product.js';
 
 const cartContainer = document.getElementById('cart-container');
@@ -64,19 +64,3 @@ summaryContainer.innerHTML = `
 `;
 
 
-document.querySelectorAll(".update-link").forEach((link) => {
-  link.addEventListener("click", () => {
-    const container = link.closest(".cart-item");
-    const id = container.querySelector(".delete-link").dataset.productId;
-    
-    const newQty = prompt("Enter new quantity:");
-    const qty = parseInt(newQty);
-
-    if (!isNaN(qty) && qty > 0) {
-      updateCartQuantity(id, qty);
-      window.location.reload(); // Refresh to show new quantity
-    } else {
-      alert("Please enter a valid number greater than 0.");
-    }
-  });
-});

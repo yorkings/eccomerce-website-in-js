@@ -1,4 +1,4 @@
-import { cart,removeFromCart,updateCartQuantity} from './cart.js';
+import { cart,removeFromCart,} from './cart.js';
 import { products } from './product.js';
 
 const cartContainer = document.getElementById('cart-container');
